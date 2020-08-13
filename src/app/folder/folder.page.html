@@ -34,7 +34,7 @@
         </ion-fab-button>
       </ion-fab>
 
-      <ion-list *ngIf="posts != ''">
+      <ion-list *ngIf="posts.length > 0">
         <ion-item-sliding *ngFor="let item of posts">
           <ion-item lines="inset">
             <ion-thumbnail slot="start">
@@ -52,7 +52,7 @@
         </ion-item-sliding>
 
       </ion-list>
-      <p *ngIf="posts== ''">No Posts</p>
+      <p *ngIf="posts.length == 0">No Posts</p>
     </div>
 
   </div>

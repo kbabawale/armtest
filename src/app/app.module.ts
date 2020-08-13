@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HTTP } from '@ionic-native/http/ngx';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { AddpostComponent } from '../app/Components/addpost/addpost.component';
+import { LoginComponent } from '../app/Components/login/login.component';
+import { SignupComponent } from '../app/Components/signup/signup.component';
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { AppComponent } from './app.component';
@@ -17,7 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 
 @NgModule({
-  declarations: [AppComponent, AddpostComponent],
+  declarations: [AppComponent, AddpostComponent, LoginComponent, SignupComponent],
   entryComponents: [AddpostComponent],
   imports: [
     BrowserModule,
