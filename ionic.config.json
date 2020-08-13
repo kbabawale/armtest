@@ -1,0 +1,7 @@
+{
+  "name": "armtest",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
