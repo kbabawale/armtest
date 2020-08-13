@@ -1,0 +1,39 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Sign Up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <form>
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">First Name <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input (input)="getFirstName($event)" required type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Last Name <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input (input)="getLastName($event)" required type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input (input)="getEmail($event)" required type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Password <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input (input)="getPassword($event)" required type="password"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" (click)="goToNext($event)" type="button" class="ion-no-margin">Sign Up</ion-button>
+      <p>Have an account, <a (click)="goToSignUp()">Login</a></p>
+    </div>
+  </form>
+</ion-content>

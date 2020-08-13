@@ -15,7 +15,42 @@
   </ion-header>
 
   <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <!-- <strong class="capitalize">{{ folder }}</strong> -->
+    <!-- <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p> -->
+
+    <div id="articles" *ngIf="folder == 'Articles'">
+      <ion-list>
+        <ion-item *ngFor="let item of articles">
+          <ion-label (click)="goToNewsPage(item.url)">{{item.title|titlecase}}</ion-label>
+        </ion-item>
+
+      </ion-list>
+    </div>
+
+    <div id="posts" *ngIf="folder == 'Posts'">
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="showAddPost()">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+
+      <ion-list *ngIf="posts != ''">
+        <ion-item-sliding *ngFor="let item of posts">
+          <ion-item lines="inset">
+            <ion-label>{{item.title|titlecase}}</ion-label>
+            <ion-img [src]="item.image"></ion-img>
+            <ion-label class="ion-text-wrap">{{item.description|titlecase}}</ion-label>
+            <ion-note slot="end" color="primary">By {{item.email}}</ion-note>
+          </ion-item>
+          <ion-item-options side="end">
+            <ion-item-option color="secondary" (click)="removePost(item)">Delete</ion-item-option>
+          </ion-item-options>
+
+        </ion-item-sliding>
+
+      </ion-list>
+      <p *ngIf="posts== ''">No Posts</p>
+    </div>
+
   </div>
 </ion-content>

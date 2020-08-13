@@ -1,0 +1,30 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <form>
+
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">Email <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input (input)="getEmail($event)" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Password <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input (input)="getPassword($event)" type="password"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" (click)="goToNext($event)" type="button" class="ion-no-margin">Login</ion-button>
+      <p>Dont have an account, <a (click)="goToSignUp()">Sign Up</a></p>
+    </div>
+  </form>
+</ion-content>

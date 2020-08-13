@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add New Post</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <form>
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">Title <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input (input)="getTitle($event)" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Description <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-textarea (input)="getDesc($event)"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Image URL <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input (input)="getImage($event)" type="text"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" (click)="goToNext($event)" type="button" class="ion-no-margin">Add</ion-button>
+
+    </div>
+  </form>
+</ion-content>

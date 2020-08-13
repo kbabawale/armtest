@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ApisService } from '../../Services/apis.service';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -15,6 +16,7 @@ import { FolderPage } from './folder.page';
     IonicModule,
     FolderPageRoutingModule
   ],
-  declarations: [FolderPage]
+  declarations: [FolderPage],
+  providers: [ApisService]
 })
-export class FolderPageModule {}
+export class FolderPageModule { }
