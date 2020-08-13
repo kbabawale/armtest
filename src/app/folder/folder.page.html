@@ -37,8 +37,11 @@
       <ion-list *ngIf="posts != ''">
         <ion-item-sliding *ngFor="let item of posts">
           <ion-item lines="inset">
+            <ion-thumbnail slot="start">
+              <img [src]="item.image">
+            </ion-thumbnail>
             <ion-label>{{item.title|titlecase}}</ion-label>
-            <ion-img [src]="item.image"></ion-img>
+
             <ion-label class="ion-text-wrap">{{item.description|titlecase}}</ion-label>
             <ion-note slot="end" color="primary">By {{item.email}}</ion-note>
           </ion-item>

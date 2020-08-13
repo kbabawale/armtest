@@ -43,11 +43,12 @@ export class FolderPage implements OnInit {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
 
     this.apisService.getPosts().subscribe(res => {
-      this.posts = res.filter(x => x.email == this.apisService.loggedInUser[0].email);
+      this.posts = res.filter(x => x.email == localStorage.getItem('user'));
     });
 
     if (this.folder == 'Spam') {
       localStorage.removeItem('logged');
+      localStorage.removeItem('user');
 
       this.route.navigate(['/']);
     }

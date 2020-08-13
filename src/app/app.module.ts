@@ -9,7 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP } from '@ionic-native/http/ngx';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
-
+import { AddpostComponent } from '../app/Components/addpost/addpost.component';
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { AppComponent } from './app.component';
@@ -17,8 +17,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent, AddpostComponent],
+  entryComponents: [AddpostComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -37,6 +37,7 @@ import { environment } from '../environments/environment';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

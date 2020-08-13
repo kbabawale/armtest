@@ -38,7 +38,7 @@ export class AddpostComponent implements OnInit {
   goToNext(e) {
     e.preventDefault();
 
-    this.apiService.addPost({ title: this.title, description: this.description, image: this.image, email: this.apiService.loggedInUser[0].email }).then(res => {
+    this.apiService.addPost({ title: this.title, description: this.description, image: this.image, email: localStorage.getItem('user') }).then(res => {
 
       this.dismissModal();
     });

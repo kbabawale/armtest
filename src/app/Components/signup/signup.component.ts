@@ -52,8 +52,9 @@ export class SignupComponent implements OnInit {
     var userb = { firstname: this.firstname, lastname: this.lastname, email: this.email, password: this.password };
     this.apiService.addUsers(userb).then(res => {
 
-      this.apiService.saveLoggedInUser(userb);
+      // this.apiService.saveLoggedInUser(userb);
       localStorage.setItem('logged', 'true');
+      localStorage.setItem('user', this.email);
       this.route.navigate(['/folder/Articles']);
 
     });

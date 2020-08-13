@@ -46,8 +46,9 @@ export class LoginComponent implements OnInit {
       this.foundUser = this.users.filter(x => x.email == this.email && x.password == this.password);
 
       if (this.foundUser.length > 0) {
-        this.apiService.saveLoggedInUser(this.foundUser[0]);
+        // this.apiService.saveLoggedInUser(this.foundUser[0]);
         localStorage.setItem('logged', 'true');
+        localStorage.setItem('user', this.email);
         this.route.navigate(['/folder/Articles']);
       }
     });
