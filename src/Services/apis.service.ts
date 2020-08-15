@@ -28,6 +28,7 @@ export class ApisService {
   loggedInUser: Array<Users> = [];
 
   constructor(private http: HttpClient, private nativeHttp: HTTP, db: AngularFirestore) {
+
     this.postCollection = db.collection<Posts>('posts');
 
     this.posts = this.postCollection.snapshotChanges().pipe(

@@ -17,7 +17,7 @@ export class FolderPage implements OnInit {
   public folder: string;
   private subs = new SubSink();
   articles: any = [];
-  posts: Posts[];
+  posts: Posts[] = [];
   constructor(private activatedRoute: ActivatedRoute, public modalController: ModalController, private route: Router, private apisService: ApisService, private plt: Platform, private iab: InAppBrowser) { }
 
   goToNewsPage(url) {

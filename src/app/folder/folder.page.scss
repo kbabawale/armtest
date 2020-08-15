@@ -9,6 +9,7 @@ ion-menu-button {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  width:100%;
 }
 
 #container strong {
@@ -30,10 +31,12 @@ ion-menu-button {
 div#articles{
   // border:1px solid black;
   margin-top: -230px;
+  width:100%;
 }
 
 div#posts{
   // border:1px solid black;
   margin-top: 0px;
   height: 500px;
+  width:100%;
 }
